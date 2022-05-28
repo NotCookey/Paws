@@ -13,14 +13,12 @@ def PawsHome():
 
 @app.route("/load", methods=["GET"])
 def loadPaws():
-    choice = random.choice(["d", "m", "f", "s"])
+    choice = random.choice(["d", "f", "s"])
 
     if choice == "s":
         url = imGen.getShiba()
     elif choice == "d":
         url = imGen.getDog()
-    elif choice == "m":
-        url = imGen.getMeows()
     elif choice == "f":
         url = imGen.getFox()
 
