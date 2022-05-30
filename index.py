@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=["POST", "GET"])
 def PawsHome():
-    choice = random.choice(["d", "f", "s"])
+    choice = random.choice(["d", "f", "s","m"])
 
     if choice == "s":
         return render_template("index.html", paws=[imGen.getShiba()])
@@ -16,16 +16,20 @@ def PawsHome():
         return render_template("index.html", paws=[imGen.getDog()])
     elif choice == "f":
         return render_template("index.html", paws=[imGen.getFox()])
+    elif choice == "m":
+        return render_template("index.html", paws=[imGen.getMeows()])
 
 
 @app.route("/load", methods=["GET"])
 def loadPaws():
-    choice = random.choice(["d", "f", "s"])
+    choice = random.choice(["d", "m", "f", "s"])
 
     if choice == "s":
         url = imGen.getShiba()
     elif choice == "d":
         url = imGen.getDog()
+    elif choice == "m":
+        url = imGen.getMeows()
     elif choice == "f":
         url = imGen.getFox()
 
