@@ -7,11 +7,10 @@ def getShiba():
         if urls:
             return urls
 
-# PATCH API-FUNCTIONCALL-TIMEOUT
-# def getMeows():
-#     urls=json.loads(requests.get("https://cataas.com/cat?json=true").content)["url"]
-#     if urls:
-#         return "https://cataas.com"+urls
+def getMeows():
+    urls=json.loads(requests.get("https://cataas.com/cat?json=true").content)["url"]
+    if urls:
+        return "https://cataas.com"+urls
 
 def getDog():
     urls=json.loads(requests.get("https://dog.ceo/api/breeds/image/random").content)["message"]
